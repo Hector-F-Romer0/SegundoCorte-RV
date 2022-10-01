@@ -31,7 +31,8 @@ public class TCPClient : MonoBehaviour {
         leerDatosProcessing ();
 
         // transform.position = new Vector3(tcpX-200,tcpY-200,0);
-        transform.position = new Vector3(tcpX,0,0);
+        transform.position = new Vector3(640-tcpX,0,0);
+        
     }
 
 
@@ -50,6 +51,7 @@ public class TCPClient : MonoBehaviour {
             tcpX = Int32.Parse (partes [0]);
             tcpY = Int32.Parse (partes [1]);
             tcpX = tcpX/suavizadorDelMovimiento;
+            Debug.Log(tcpX);
         }
     }
 
