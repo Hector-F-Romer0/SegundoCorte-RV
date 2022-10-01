@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Instanciador
   - meteorito
+  - PlaneDestroy
   layers:
   - Default
   - TransparentFX
