@@ -19,6 +19,7 @@ public class TCPClient : MonoBehaviour {
 
     public int tcpX = 0;
     public int tcpY = 0;
+    public int suavizadorDelMovimiento = 10;
 
     void Start () {
         abrirElSocket ();
@@ -30,7 +31,7 @@ public class TCPClient : MonoBehaviour {
         leerDatosProcessing ();
 
         // transform.position = new Vector3(tcpX-200,tcpY-200,0);
-        transform.position = new Vector3(tcpX-200,0,0);
+        transform.position = new Vector3(tcpX,0,0);
     }
 
 
@@ -45,10 +46,10 @@ public class TCPClient : MonoBehaviour {
                 new string[]{","},
                 StringSplitOptions.None
             );
-            Debug.Log ("X=" + partes [0] + " Y=" + partes [1]);
+            //Debug.Log ("X=" + partes [0] + " Y=" + partes [1]);
             tcpX = Int32.Parse (partes [0]);
             tcpY = Int32.Parse (partes [1]);
-            tcpX = tcpX/2;
+            tcpX = tcpX/suavizadorDelMovimiento;
         }
     }
 

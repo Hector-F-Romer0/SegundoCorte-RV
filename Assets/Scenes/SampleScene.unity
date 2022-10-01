@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 267019601}
   - component: {fileID: 267019602}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Nave
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,8 +216,8 @@ Transform:
   m_GameObject: {fileID: 267019596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.75, z: 0.3}
-  m_LocalScale: {x: 0.64645, y: 0.64645, z: 0.64645}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 304395528}
   m_Father: {fileID: 0}
@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tcpX: 0
   tcpY: 0
+  suavizadorDelMovimiento: 10
 --- !u!114 &267019602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,7 +447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.4, z: -9.59}
+  m_LocalPosition: {x: 31.1, y: 10, z: -27.51}
   m_LocalScale: {x: 1.0088, y: 1.0088, z: 1.0088}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -466,7 +467,7 @@ GameObject:
   - component: {fileID: 1073815368}
   - component: {fileID: 1073815367}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: ColisionMeteoritos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,8 +545,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073815366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2746, y: -7.2, z: -1.2736225}
-  m_LocalScale: {x: 1.9397, y: 1, z: 0.83046}
+  m_LocalPosition: {x: 6.2, y: -11.4, z: -1.2736225}
+  m_LocalScale: {x: 20.91, y: 1, z: 0.83046}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -732,9 +733,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angMeteorito: {x: 0, y: 0, z: 0, w: 0}
-  randomNum: 0
+  spawnMeteorito: 0
   meteorito: {fileID: 4515038271285878271, guid: 07a9709e73003294a8494c03dad0eb2c, type: 3}
   meteoroG: {fileID: 3756173397201222010, guid: 016a17f9509b51d48b58d5bf62e18358, type: 3}
+  posicionesSpawnMeteoritos: []
 --- !u!4 &1379343904
 Transform:
   m_ObjectHideFlags: 0

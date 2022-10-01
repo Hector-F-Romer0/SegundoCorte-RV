@@ -1,50 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class InstanciaMeteorito : MonoBehaviour
 {
     public Quaternion angMeteorito;
-    public int randomNum;
+    public int spawnMeteorito;
     public GameObject meteorito;
     public GameObject meteoroG;
-    Vector3 posicion1 = new Vector3(0,13,0);
-    Vector3 posicion2 = new Vector3(-8,13,0);
-    Vector3 posicion3 = new Vector3(8,13,0);
+    public List<Vector3> posicionesSpawnMeteoritos;
     int i;
     int c; 
     int dificultadMeteoroG;
 
     // Start is called before the first frame update
     void Start()
-    {    
+    {
+        posicionesSpawnMeteoritos.Add(new Vector3(5, 30, 0));
+        posicionesSpawnMeteoritos.Add(new Vector3(8, 30, 0));
+        posicionesSpawnMeteoritos.Add(new Vector3(14, 30, 0));
+        posicionesSpawnMeteoritos.Add(new Vector3(24, 30, 0));
+        posicionesSpawnMeteoritos.Add(new Vector3(28, 30, 0));
+        posicionesSpawnMeteoritos.Add(new Vector3(35, 30, 0));
+        posicionesSpawnMeteoritos.Add(new Vector3(42, 30, 0));
+        posicionesSpawnMeteoritos.Add(new Vector3(47, 30, 0));
+        posicionesSpawnMeteoritos.Add(new Vector3(50, 30, 0));
+        posicionesSpawnMeteoritos.Add(new Vector3(53, 30, 0));
+        posicionesSpawnMeteoritos.Add(new Vector3(57, 30, 0));
         dificultadMeteoroG = 9;
         i=0;
         c=0;
          angMeteorito = meteorito.transform.rotation;
          ClonarMeteroritos();
+        Debug.Log(posicionesSpawnMeteoritos.Count);
     }
 
     // Update is called once per frame
     void Update()
     {
        
-   
+
     }
     public void ClonarMeteroritos(){
         i++;
-        randomNum = Random.Range(1,4);
-        if (i<dificultadMeteoroG){
-            Debug.Log(randomNum);
-            if (randomNum==1){
-                Instantiate(meteorito, posicion1, angMeteorito);
-            }
-            if (randomNum==2){
-                Instantiate(meteorito, posicion2, angMeteorito);
-            }
-            if (randomNum==3){
-                Instantiate(meteorito, posicion3, angMeteorito);
-            }
+        spawnMeteorito = Random.Range(0,posicionesSpawnMeteoritos.Count);
+        Debug.Log("Posición aleatoria: " + spawnMeteorito);
+        if (i<dificultadMeteoroG){ 
+            
+            Instantiate(meteorito, posicionesSpawnMeteoritos[spawnMeteorito], angMeteorito);
+            
             } else{
                 InvocarMeteoritoGrande();
                 i=0;
@@ -58,15 +63,8 @@ public class InstanciaMeteorito : MonoBehaviour
             }  
     }
     public void InvocarMeteoritoGrande(){
-        randomNum = Random.Range(1,4);
-            if (randomNum==1){
-                Instantiate(meteoroG, posicion1, angMeteorito);
-            }
-            if (randomNum==2){
-                Instantiate(meteoroG, posicion2, angMeteorito);
-            }
-            if (randomNum==3){
-                Instantiate(meteoroG, posicion3, angMeteorito);
-            }
+        //randomNum = Random.Range(1,4);
+        spawnMeteorito = Random.Range(0, posicionesSpawnMeteoritos.Count);
+        Instantiate(meteorito, posicionesSpawnMeteoritos[spawnMeteorito], angMeteorito);
     }
 }
