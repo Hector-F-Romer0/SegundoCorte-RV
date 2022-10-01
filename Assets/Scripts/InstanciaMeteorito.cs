@@ -13,14 +13,13 @@ public class InstanciaMeteorito : MonoBehaviour
     int i;
     int c; 
     int dificultadMeteoroG;
-    float modificadorGravedad;
+    public float modificadorGravedad;
 
     // Start is called before the first frame update
     void Start()
     {
         meteoroG.transform.localScale = new Vector3(4,4,4);
         meteorito.transform.localScale = new Vector3(2.7f,2.7f,2.7f);
-
         posicionesSpawnMeteoritos.Add(new Vector3(2, 30, 0));
         posicionesSpawnMeteoritos.Add(new Vector3(8, 30, 0));
         posicionesSpawnMeteoritos.Add(new Vector3(14, 30, 0));
@@ -33,7 +32,7 @@ public class InstanciaMeteorito : MonoBehaviour
         posicionesSpawnMeteoritos.Add(new Vector3(55, 30, 0));
         posicionesSpawnMeteoritos.Add(new Vector3(62, 30, 0));
         dificultadMeteoroG = 8;
-        modificadorGravedad = 2.5f;
+        modificadorGravedad = 2.0f;
         Physics.gravity*=modificadorGravedad;
         i=0;
         c=0;
